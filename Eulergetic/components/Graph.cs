@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
- 
+using System.Security.Cryptography;
+using System.Runtime.CompilerServices;
 
 namespace Eulergetic.components
 {
@@ -15,13 +16,13 @@ namespace Eulergetic.components
         internal Dictionary<Vertex, string> vertexedKeys;
         internal Dictionary<string, Edge> keyedEdges;
         internal Dictionary<Edge, string> edgedKeys;
-
+         
         public Graph()
         {
             keyedVertices = new Dictionary<string, Vertex>();
             vertexedKeys = new Dictionary<Vertex, string>();
             keyedEdges = new Dictionary<string, Edge>();
-            edgedKeys = new Dictionary<Edge, string>();
+            edgedKeys = new Dictionary<Edge, string>(); 
         }
         /// <summary>
         /// Add an edge to to the graph
@@ -31,13 +32,22 @@ namespace Eulergetic.components
         /// <param name="edgekey">Name of new Edge</param>
         /// <param name="e">Object reference of new edge</param>
         /// <returns></returns>
-        public Edge AddEdge(string key1, string key2, string edgekey , Edge e=null)
+       
+        public Edge AddEdge(string key1, string key2, string edgekey=null , Edge e=null)
         {
             Vertex v1;
             Vertex v2;
 
-            if (e == null) e = new Edge();
-
+            if (edgekey == null)
+            {
+                edgekey = Graph.AutoName(this.Edges.Count + 1);
+            }
+            if (e == null)
+            {
+                e = new Edge();
+                 
+            }
+            // if the vertices don't exist, add them
             if (keyedVertices.ContainsKey(key1))
             {
                 v1 = keyedVertices[key1];
@@ -47,6 +57,7 @@ namespace Eulergetic.components
                 v1 = new Vertex();
                 keyedVertices.Add(key1,v1 );
             }
+            // if the vertices don't exist, add them
             if (keyedVertices.ContainsKey(key1))
             {
                 v2 = keyedVertices[key2];
@@ -61,6 +72,8 @@ namespace Eulergetic.components
             e.v2 = v2;
             v1.Edges.Add(e);
             v2.Edges.Add(e);
+
+
             if (!edgedKeys.ContainsKey(e)) this.edgedKeys.Add(e, edgekey);
             if (!keyedEdges.ContainsKey(edgekey)) this.keyedEdges.Add(edgekey, e);
 
@@ -265,7 +278,7 @@ namespace Eulergetic.components
             // generates a complete graph of n nodes & (n * (n-1)) edges
             for (int i = 0; i < n; i++)
             {
-                retval.AddVertex(autoName(i), new Vertex()); 
+                retval.AddVertex(AutoName(i), new Vertex()); 
             }
 
             int j=-2;
@@ -275,7 +288,7 @@ namespace Eulergetic.components
                 for (int l = k + 1; l < n; l++)
                 {
                     j++;
-                    retval.AddEdge(autoName(k), autoName(l), j.ToString(), new Edge());
+                    retval.AddEdge(AutoName(k), AutoName(l), j.ToString(), new Edge());
                 }
             }
             return retval;
@@ -291,24 +304,24 @@ namespace Eulergetic.components
             Graph retval = new Graph();
             for (int i = 0; i < Vcount; i++)
             {
-                retval.AddVertex(autoName(i), new Vertex());
+                retval.AddVertex(AutoName(i), new Vertex());
             }
             Random r = new Random( );
             
             for (int j = 0; j < Ecount; j++)
             { 
-                string a = autoName(r.Next(Vcount) );
-                string b = autoName(r.Next(Vcount) );
+                string a = AutoName(r.Next(Vcount) );
+                string b = AutoName(r.Next(Vcount) );
                 while (a == b)
                 {
-                    b = autoName(r.Next(Vcount));
+                    b = AutoName(r.Next(Vcount));
                 }
                 retval.AddEdge(a, b, j.ToString(), new Edge());
             }
             return retval; 
         }
 
-        public static string autoName(long x)
+        public static string AutoName(long x)
         {
             return String.Format("{0:X}", x) ;
         }

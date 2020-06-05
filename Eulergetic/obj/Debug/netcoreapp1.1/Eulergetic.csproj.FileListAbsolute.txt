@@ -7,3 +7,11 @@ C:\Users\sean\Desktop\Projects\Eulergetic\Eulergetic\bin\Debug\netcoreapp1.1\Eul
 C:\Users\sean\Desktop\Projects\Eulergetic\Eulergetic\obj\Debug\netcoreapp1.1\Eulergetic.dll
 C:\Users\sean\Desktop\Projects\Eulergetic\Eulergetic\obj\Debug\netcoreapp1.1\Eulergetic.pdb
 C:\Users\sean\Desktop\Projects\Eulergetic\Eulergetic\obj\Debug\netcoreapp1.1\Eulergetic.csprojResolveAssemblyReference.cache
+C:\projects\eulergetic\Eulergetic\Eulergetic\bin\Debug\netcoreapp1.1\Eulergetic.deps.json
+C:\projects\eulergetic\Eulergetic\Eulergetic\bin\Debug\netcoreapp1.1\Eulergetic.dll
+C:\projects\eulergetic\Eulergetic\Eulergetic\bin\Debug\netcoreapp1.1\Eulergetic.pdb
+C:\projects\eulergetic\Eulergetic\Eulergetic\obj\Debug\netcoreapp1.1\Eulergetic.csprojAssemblyReference.cache
+C:\projects\eulergetic\Eulergetic\Eulergetic\obj\Debug\netcoreapp1.1\Eulergetic.AssemblyInfoInputs.cache
+C:\projects\eulergetic\Eulergetic\Eulergetic\obj\Debug\netcoreapp1.1\Eulergetic.AssemblyInfo.cs
+C:\projects\eulergetic\Eulergetic\Eulergetic\obj\Debug\netcoreapp1.1\Eulergetic.dll
+C:\projects\eulergetic\Eulergetic\Eulergetic\obj\Debug\netcoreapp1.1\Eulergetic.pdb

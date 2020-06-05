@@ -49,7 +49,7 @@ namespace Eulergetic
             System.Console.Out.WriteLine("Autoname");
             for (int i=0;i<100;i++)
             {
-                System.Console.Out.Write(Graph.autoName(i) + "\t");
+                System.Console.Out.Write(Graph.AutoName(i) + "\t");
             }
             System.Console.Out.WriteLine(" ");
             System.Console.Out.WriteLine("C 8");
