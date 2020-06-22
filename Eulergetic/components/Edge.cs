@@ -1,8 +1,12 @@
-﻿namespace Eulergetic.components
+﻿using System;
+using System.Runtime.CompilerServices;
+
+namespace Eulergetic.components
 {
     public class Edge {
         internal Vertex v1;
-        internal Vertex v2; 
+        internal Vertex v2;
+        private Guid guid;
         public Edge(Vertex a=null, Vertex b=null) {
             v1 = a;
             v2 = b;
@@ -27,5 +31,30 @@
         {
             return new Edge();
         }
+        public string id
+        {
+            get { return this.guid.ToString(); }
+        }
+    }
+
+    public class DirectedEdge:Edge
+    {
+        DirectedEdge(Vertex Origin, Vertex Destination)
+        {
+            this.v1 = Origin;
+            this.v2 = Destination;
+        }
+        public Vertex Origin 
+        {
+            get { return v1; }
+            set { v1 = value; }
+        }
+        public Vertex Destination
+        {
+            get { return v2;}
+            set { v2 = value; }
+        }
+         
+
     }
 }

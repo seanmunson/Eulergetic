@@ -16,7 +16,7 @@ namespace eulergetic_tests
 
 
             Assert.IsTrue(g.Edges.Count == 1, "One edge added");
-            Assert.IsTrue(g.Vertices.Count == 1, "two vertices");
+            Assert.IsTrue(g.Vertices.Count == 2, "two vertices");
             Assert.IsTrue(Graph.isSimple(g), "Graph is Simple");
             Assert.IsTrue(Graph.isTree(g), "Graph is a Tree");
             
