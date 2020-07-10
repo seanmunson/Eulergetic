@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Eulergetic.components
 {
-    class GraphTests
+    // This class Extends tests on graphs
+    class GraphTestExtension
     {
+        
     }
 }

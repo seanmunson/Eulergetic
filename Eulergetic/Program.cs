@@ -43,6 +43,7 @@ namespace Eulergetic
             System.Console.Out.WriteLine("Graph");
             System.Console.Out.WriteLine(GraphWriter.Write(g));
 
+
             System.Console.Out.WriteLine("MSP(g)");
             System.Console.Out.WriteLine(GraphWriter.Write(g.MinimumSpanningTree()));
 
