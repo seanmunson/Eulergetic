@@ -152,6 +152,10 @@ namespace Eulergetic.components
                 return new List<Edge>(keyedEdges.Values);
             }
         }
+        public bool ContainsEdge(string s)
+        {
+            return this.keyedEdges.ContainsKey(s);
+        }
         /// <summary>
         /// Vertices of the graph
         /// </summary>
@@ -161,6 +165,12 @@ namespace Eulergetic.components
             {     
                 return new List<Vertex>(keyedVertices.Values);
             }
+        }
+
+        public bool ContainsVertex(string s)
+        {
+            return this.keyedver
+
         }
         /// <summary>
         ///  is this graph simple, without any duplicate edges or self-directed edges
@@ -183,7 +193,7 @@ namespace Eulergetic.components
         /// is this graph a tree (without any cycles)
         /// </summary>
         /// <param name="G">Graph to Consider</param>
-        /// <returns>True if the graph has no cycles</returns>
+        /// <returns>True if the graph has no cycles</returns>ik
         public static bool isTree(Graph G)
         {
             HashSet<Vertex> encounteredVertices = new HashSet<Vertex>();

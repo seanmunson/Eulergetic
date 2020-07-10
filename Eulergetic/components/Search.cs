@@ -22,13 +22,15 @@ namespace Eulergetic.components
 
             public bool Push(Vertex source, Vertex target, Edge E)
             {
-                if (G.Vertices.Contains(target))
+                if (G.(target))
                     return false;
                 if (G.Vertices.Contains(source))
                 {
                     throw new Exception("source vertext must exist");                     
                 }
-                
+
+                G.AddVertex(target.id, target);
+                G.AddEdge(new ObjVertex(target));
 
                 
             }
