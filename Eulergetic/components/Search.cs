@@ -22,7 +22,7 @@ namespace Eulergetic.components
 
             public bool Push(Vertex source, Vertex target, Edge E)
             {
-                if (G.(target))
+                if (G.Vertices.Contains(target))
                     return false;
                 if (G.Vertices.Contains(source))
                 {
@@ -30,15 +30,17 @@ namespace Eulergetic.components
                 }
 
                 G.AddVertex(target.id, target);
-                G.AddEdge(new ObjVertex(target));
+                // G.AddEdge(new ObjVertex(target),);
 
-                
+                return true;
             }
 
         }
         public Route DFS(Graph G, Vertex A, Vertex B)
         {
+            // Todo: Implement DFS;
 
+            return new Route();
         }
     }
 }

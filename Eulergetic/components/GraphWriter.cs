@@ -23,5 +23,10 @@ namespace Eulergetic.components
             }
             return B.ToString();
         }
+        public static string WriteHTML(Graph G, int width, int height)
+        {
+            string retval = "";
+            return retval;
+        }
     }
 }

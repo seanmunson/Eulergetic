@@ -169,7 +169,7 @@ namespace Eulergetic.components
 
         public bool ContainsVertex(string s)
         {
-            return this.keyedver
+            return this.keyedVertices.ContainsKey(s);
 
         }
         /// <summary>

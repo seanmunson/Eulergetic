@@ -19,6 +19,7 @@ namespace eulergetic_tests
             Assert.IsTrue(Graph.isTree(g), "Graph is a Tree");
             
         }
+        [TestMethod]
         public void GraphCompleteCreate()
         {
             Graph g = Graph.Complete(5);
@@ -26,6 +27,13 @@ namespace eulergetic_tests
             Assert.IsTrue(g.Vertices.Count == 5, "two vertices");
             Assert.IsFalse(Graph.isSimple(g), "Graph should not be Simple");
             Assert.IsFalse(Graph.isTree(g), "Graph should not be a Tree");
+        }
+        [TestMethod]
+        public void GraphWriteTest()
+        {
+            Graph g = Graph.Complete(5);
+            string s = GraphWriter.Write(g);
+            Assert.IsTrue(s != "");
         }
     }
 }
