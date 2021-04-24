@@ -9,6 +9,9 @@
 *.bin
 *.user
 *.sln.*
+*.suo
+*.testlog
+*.v2
 **.props
 /Eulergetic/obj/**
 /Eulergetic/bin/**
